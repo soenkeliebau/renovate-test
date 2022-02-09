@@ -18,14 +18,14 @@ jobs:
     name: Run Rustfmt
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@01aecccf739ca6ff86c0539fbc67a7a5007bbc81 # tag=v2.1.0
-      - uses: actions-rs/toolchain@16499b5e05bf2e26879000db0c1d13f7e13fa3af # tag=v1.0.7
+      - uses: actions/checkout@01aecccf739ca6ff86c0539fbc67a7a5007bbc81 # renovate: tag=v2.1.0
+      - uses: actions-rs/toolchain@16499b5e05bf2e26879000db0c1d13f7e13fa3af # tag=v1.0.0
         with:
           profile: minimal
           toolchain: stable
           components: rustfmt
           override: true
-      - uses: actions-rs/cargo@eadeb9d8b98f01d4d584ac7b4124ab74116e52db # tag=v1.0.0
+      - uses: actions-rs/cargo@eadeb9d8b98f01d4d584ac7b4124ab74116e52db  # tag=v1.0.0
         with:
           command: fmt
           args: --all -- --check
