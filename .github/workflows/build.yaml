@@ -1,0 +1,31 @@
+---
+name: Stackable Build Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - trying
+      - "renovate/**"
+    tags:
+      - "*"
+  pull_request:
+
+
+jobs:
+  run_rustfmt:
+    name: Run Rustfmt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: actions-rs/toolchain@v1.0.7
+        with:
+          profile: minimal
+          toolchain: stable
+          components: rustfmt
+          override: true
+      - uses: actions-rs/cargo@v1.0.0
+        with:
+          command: fmt
+          args: --all -- --check
