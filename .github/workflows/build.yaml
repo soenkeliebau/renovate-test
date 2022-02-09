@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@01aecccf739ca6ff86c0539fbc67a7a5007bbc81 # renovate: tag=v2.1.0
-      - uses: actions-rs/toolchain@16499b5e05bf2e26879000db0c1d13f7e13fa3af # tag=v1.0.0
+      - uses: actions-rs/toolchain@8e603f32c5c6eeca5b1b2d9d1e7464d926082f1d # tag=v1.0.0
         with:
           profile: minimal
           toolchain: stable
